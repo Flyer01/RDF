@@ -17,18 +17,26 @@ public class Frame {
         frame.setLayout(new GridBagLayout());
 
         JTextField textField1 = new JTextField("Путь к файлам");
+        textField1.setEnabled(false);
         JTextField textField2 = new JTextField("Путь к резервной копии файлов");
+        textField2.setEnabled(false);
         JButton button1 = new JButton("Путь к файлам");
         JButton button2 = new JButton("Путь к копии");
 
-        textField1.setEnabled(false);
-        frame.add(textField1, new GridBagConstraints(0, 0, 1, 1, 1, 1,GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL,new Insets(2, 2, 2, 2), 0, 6));
+        frame.add(textField1, new GridBagConstraints(0, 0, 1, 1, 1, 1, GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL, new Insets(2, 2, 2, 2), 0, 7));
 
-        frame.add(button1, new GridBagConstraints(1, 0, 1, 1, 1, 1,GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL, new Insets(2, 2, 2, 2), 0, 0));
+        frame.add(button1, new GridBagConstraints(1, 0, 1, 1, 1, 1, GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL, new Insets(2, 2, 2, 2), 0, 0));
 
-        frame.add(textField2, new GridBagConstraints(0, 1, 1, 1, 1, 1, GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL, new Insets(2, 2, 2, 2), 0, 6));
+        frame.add(textField2, new GridBagConstraints(0, 1, 1, 1, 1, 1, GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL, new Insets(2, 2, 2, 2), 0, 7));
 
-        frame.add(button2, new GridBagConstraints(1, 1, 1, 1, 1, 1,GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL,new Insets(2, 2, 2, 2), 0, 0));
+        frame.add(button2, new GridBagConstraints(1, 1, 1, 1, 1, 1, GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL, new Insets(2, 2, 2, 2), 0, 0));
+
+        JPanel panel = new JPanel();
+
+        frame .add(panel, new GridBagConstraints(0, 2, 2, 1, 1, 1,GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL,new Insets(2, 2, 2, 2), 0, 0));
+
+        panel.setBackground(Color.GRAY);
+
         frame.setVisible(true);
         frame.pack();
     }
