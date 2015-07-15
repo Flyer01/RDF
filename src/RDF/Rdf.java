@@ -5,6 +5,6 @@ package RDF;
  */
 public class Rdf {
     public static void main(String[] args) {
-        
+        System.out.println("Пример для Git-а");
     }
 }
