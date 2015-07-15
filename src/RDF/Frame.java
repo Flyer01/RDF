@@ -22,6 +22,10 @@ public class Frame {
         textField2.setEnabled(false);
         JButton button1 = new JButton("Путь к файлам");
         JButton button2 = new JButton("Путь к копии");
+        JButton button3 = new JButton("Выполнить...");
+
+        JTextField textField3 = new JTextField("Что искать...");
+        JTextField textField4 = new JTextField("На что менять...");
 
         frame.add(textField1, new GridBagConstraints(0, 0, 1, 1, 1, 1, GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL, new Insets(2, 2, 2, 2), 0, 7));
 
@@ -32,8 +36,13 @@ public class Frame {
         frame.add(button2, new GridBagConstraints(1, 1, 1, 1, 1, 1, GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL, new Insets(2, 2, 2, 2), 0, 0));
 
         JPanel panel = new JPanel();
+        panel.setLayout(new GridBagLayout());
 
-        frame .add(panel, new GridBagConstraints(0, 2, 2, 1, 1, 1,GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL,new Insets(2, 2, 2, 2), 0, 0));
+        frame.add(panel, new GridBagConstraints(0, 2, 2, 1, 1, 1, GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL, new Insets(2, 2, 2, 2), 0, 0));
+
+        panel.add(textField3, new GridBagConstraints(0, 0, 1, 1, 1, 1,GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL,new Insets(2, 2, 2, 2), 0, 7));
+        panel.add(textField4, new GridBagConstraints(0, 1, 1, 1, 1, 1,GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL,new Insets(2, 2, 2, 2), 0, 7));
+        panel.add(button3, new GridBagConstraints(1, 0, 1, 1, 1, 1,GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL,new Insets(2, 2, 2, 2), 0, 0));
 
         panel.setBackground(Color.GRAY);
 
