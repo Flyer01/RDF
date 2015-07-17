@@ -10,7 +10,7 @@ import java.io.File;
  * Created by 6377-00-285 on 15.07.2015.
  */
 public class Frame {
-
+        String str = null;
     public void fRame() {
         JFrame frame = new JFrame("Название проги...");
 
@@ -19,9 +19,9 @@ public class Frame {
         frame.setLocationRelativeTo(null);
         frame.setLayout(new GridBagLayout());
 
-        JTextField textField1 = new JTextField("Путь к файлам");
+        final JTextField textField1 = new JTextField("Путь к файлам");
         textField1.setEnabled(false);
-        JTextField textField2 = new JTextField("Путь к резервной копии файлов");
+        final JTextField textField2 = new JTextField("Путь к резервной копии файлов");
         textField2.setEnabled(false);
         JButton button1 = new JButton("Путь к файлам");
         JButton button2 = new JButton("Путь к копии");
@@ -56,21 +56,32 @@ public class Frame {
                 JFileChooser fileChooser1 = new JFileChooser();
                 fileChooser1.setCurrentDirectory(new File("C:\\Users\\6377-00-285\\Desktop\\Новая папка (2)"));
                 fileChooser1.setDialogTitle("Путь к файлам...");
-                fileChooser1.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+                fileChooser1.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
 
-                if(fileChooser1.showOpenDialog(open) == JFileChooser.APPROVE_OPTION) {
-                    String str = fileChooser1.getSelectedFile().getAbsolutePath();
-                    System.out.println("You chose: " + str);
+                if (fileChooser1.showOpenDialog(open) == JFileChooser.APPROVE_OPTION) {
+                    str = fileChooser1.getSelectedFile().getAbsolutePath();
                 }
+                textField1.setText(str);
             }
         });
-        /*button2.addActionListener(new ActionListener() {
+
+        button2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                FrameIdFileR frameIdFileR = new FrameIdFileR();
-                frameIdFileR.frameIdFileR();
+                JButton open = new JButton();
+                JFileChooser fileChooser2 = new JFileChooser();
+                fileChooser2.setCurrentDirectory(new File("C:\\Users\\6377-00-285\\Desktop\\Новая папка (2)"));
+                fileChooser2.setDialogTitle("Путь куда делать копию...");
+                fileChooser2.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+
+                if (fileChooser2.showOpenDialog(open) == JFileChooser.APPROVE_OPTION) {
+                    str = fileChooser2.getSelectedFile().getAbsolutePath();
+                }
+                textField2.setText(str);
+                System.out.println(textField1.getText());
             }
-        });*/
+
+        });
         /*button3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
