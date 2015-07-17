@@ -2,6 +2,8 @@ package RDF;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by 6377-00-285 on 15.07.2015.
@@ -45,6 +47,21 @@ public class Frame {
         panel.add(button3, new GridBagConstraints(1, 0, 1, 1, 1, 1,GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL,new Insets(2, 2, 2, 2), 0, 0));
 
         panel.setBackground(Color.GRAY);
+
+        button1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                FrameIdFile frameIdFile = new FrameIdFile();
+                frameIdFile.frameIdFile();
+            }
+        });
+        button2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                FrameIdFileR frameIdFileR = new FrameIdFileR();
+                frameIdFileR.frameIdFileR();
+            }
+        });
 
         frame.setVisible(true);
         frame.pack();

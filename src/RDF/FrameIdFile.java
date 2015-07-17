@@ -8,9 +8,8 @@ import java.awt.*;
  */
 public class FrameIdFile {
     public void frameIdFile() {
-        JFrame frameOpenDialog = new JFrame();
+        JFrame frameOpenDialog = new JFrame("Путь к папке с файлами...");
 
-        frameOpenDialog.setSize(500, 500);
         frameOpenDialog.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frameOpenDialog.setLocationRelativeTo(null);
         frameOpenDialog.setLayout(new GridBagLayout());
@@ -20,5 +19,6 @@ public class FrameIdFile {
         frameOpenDialog.add(fileChooser1);
 
         frameOpenDialog.setVisible(true);
+        frameOpenDialog.pack();
     }
 }
