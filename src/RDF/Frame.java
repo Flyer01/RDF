@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 
 /**
  * Created by 6377-00-285 on 15.07.2015.
@@ -51,17 +52,32 @@ public class Frame {
         button1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                FrameIdFile frameIdFile = new FrameIdFile();
-                frameIdFile.frameIdFile();
+                JButton open = new JButton();
+                JFileChooser fileChooser1 = new JFileChooser();
+                fileChooser1.setCurrentDirectory(new File("C:\\Users\\6377-00-285\\Desktop\\Новая папка (2)"));
+                fileChooser1.setDialogTitle("Путь к файлам...");
+                fileChooser1.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+
+                if(fileChooser1.showOpenDialog(open) == JFileChooser.APPROVE_OPTION) {
+                    String str = fileChooser1.getSelectedFile().getAbsolutePath();
+                    System.out.println("You chose: " + str);
+                }
             }
         });
-        button2.addActionListener(new ActionListener() {
+        /*button2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 FrameIdFileR frameIdFileR = new FrameIdFileR();
                 frameIdFileR.frameIdFileR();
             }
-        });
+        });*/
+        /*button3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Start start = new Start();
+                start.start();
+            }
+        });*/
 
         frame.setVisible(true);
         frame.pack();
