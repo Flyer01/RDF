@@ -78,9 +78,7 @@ public class Frame {
                     str = fileChooser2.getSelectedFile().getAbsolutePath();
                 }
                 textField2.setText(str);
-                System.out.println(textField1.getText());
             }
-
         });
         /*button3.addActionListener(new ActionListener() {
             @Override
