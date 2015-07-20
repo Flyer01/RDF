@@ -58,9 +58,8 @@ public class Frame {
                 fileChooser1.setDialogTitle("Путь к файлам...");
                 fileChooser1.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
 
-                if (fileChooser1.showOpenDialog(open) == JFileChooser.APPROVE_OPTION) {
+                if (fileChooser1.showOpenDialog(open) == JFileChooser.APPROVE_OPTION)
                     str = fileChooser1.getSelectedFile().getAbsolutePath();
-                }
                 textField1.setText(str);
             }
         });
@@ -72,7 +71,7 @@ public class Frame {
                 JFileChooser fileChooser2 = new JFileChooser();
                 fileChooser2.setCurrentDirectory(new File("C:\\Users\\6377-00-285\\Desktop\\Новая папка (2)"));
                 fileChooser2.setDialogTitle("Путь куда делать копию...");
-                fileChooser2.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+                fileChooser2.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 
                 if (fileChooser2.showOpenDialog(open) == JFileChooser.APPROVE_OPTION) {
                     str = fileChooser2.getSelectedFile().getAbsolutePath();
